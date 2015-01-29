@@ -5,6 +5,11 @@ $app = new Silex\Application();
 //essa linha mostra o hello world
 $app->get('/hello/{name}', function($name) use($app) { 
     return 'Hello '.$app->escape($name); 
-}); 
+});
+
+$app->get('/', function() use($app){
+	return'ok';
+});
+ 
 //executar
 $app->run(); 
